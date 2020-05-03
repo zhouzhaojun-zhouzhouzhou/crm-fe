@@ -5,6 +5,7 @@ import Login from '@/pages/login/login'
 import NotFound from '@/pages/errorPage/404'
 import Forbidden from '@/pages/errorPage/403'
 import Layout from '@/pages/layout/index'
+import DynamicRouteList from './dynamic-router'
 
 Vue.use(Router)
 
@@ -14,7 +15,8 @@ export default new Router({
         {
             path: '/login',
             component: Login
-        }
+        },
+        ...DynamicRouteList
     ]
 })
 
