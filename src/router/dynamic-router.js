@@ -11,6 +11,10 @@ const dynamicRoutes = [
         path: '/permission',
         component: Permission,
         name: 'permission',
+        meta: {
+            name: '权限管理',
+            icon: 'table'
+        },
         children: [
             {
                 path: 'user',
