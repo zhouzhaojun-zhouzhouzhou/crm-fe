@@ -5,7 +5,7 @@ import Login from '@/pages/login/login'
 import NotFound from '@/pages/errorPage/404'
 import Forbidden from '@/pages/errorPage/403'
 import Layout from '@/pages/layout/index'
-import DynamicRouteList from './dynamic-router'
+import Role from "@/pages/permission/role-permission"
 
 Vue.use(Router)
 
@@ -16,12 +16,33 @@ export default new Router({
             path: '/login',
             component: Login
         },
-        ...DynamicRouteList
     ]
 })
 
 /* 准备动态添加的路由 */
 export const DynamicRoutes = [
+    {
+        path: '',
+        component: Layout,
+        name: 'container',
+        redirect: 'home',
+        meta: {
+            requiresAuth: true,
+            name: '首页'
+        },
+        children: [
+            {
+                id: 1,
+                path: 'home',
+                component: Role,
+                name: 'home',
+                meta: {
+                    name: '首页',
+                    icon: 'tree'
+                }
+            }
+        ]
+    },
     {
         path: '/403',
         component: Forbidden

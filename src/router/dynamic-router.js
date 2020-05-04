@@ -7,31 +7,38 @@ const Role=()=>import("@/pages/permission/role-permission")
 
 /* 需要权限判断的路由 */
 const dynamicRoutes = [
-    
     {
         path: '/permission',
         component: Permission,
         name: 'permission',
         children: [
             {
-                path: 'menu',
-                component: Menu,
-                name: 'menu-permission',
+                path: 'user',
+                name: 'user-manage',
+                component: User,
+                meta: {
+                    name: '用户管理',
+                    icon: 'table'
+                }
             },
             {
                 path: 'role',
+                name: 'role-manage',
                 component: Role,
-                name: 'role-permission',
                 meta: {
                     name: '角色管理',
                     icon: 'eye'
                 }
             },
             {
-                path: 'user',
-                component: User,
-                name: 'user-permission',
-            },
+                path: 'menu',
+                name: 'menu-manage',
+                component: Menu,
+                meta: {
+                    name: '菜单管理',
+                    icon: 'tree'
+                }
+            }
         ],
     },
 ]
