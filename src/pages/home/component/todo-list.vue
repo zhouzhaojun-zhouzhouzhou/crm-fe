@@ -1,6 +1,6 @@
 <template>
     <div>
-       <router-view></router-view>
+       one
     </div>
 </template>
 
@@ -8,9 +8,6 @@
 export default {
     data() {
         return {}
-    },
-    mounted() {
-
     }
 }
 </script>

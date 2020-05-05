@@ -5,17 +5,16 @@ import Login from '@/pages/login/login'
 import NotFound from '@/pages/errorPage/404'
 import Forbidden from '@/pages/errorPage/403'
 import Layout from '@/pages/layout/index'
-import Role from "@/pages/permission/role-permission"
+import Home from '@/pages/home/index'
 
 Vue.use(Router)
-
 /* 初始路由 */
 export default new Router({
     routes: [
         {
             path: '/login',
             component: Login
-        },
+        }
     ]
 })
 
@@ -34,7 +33,7 @@ export const DynamicRoutes = [
             {
                 id: 1,
                 path: 'home',
-                component: Role,
+                component: Home,
                 name: 'home',
                 meta: {
                     name: '首页',

@@ -45,20 +45,14 @@ export default {
             let permissionList = await fetchPermission()
             commit('SET_AVATAR', permissionList.avatar)
             commit('SET_ACCOUNT', permissionList.name)
-            console.log(permissionList.data, dynamicRouter)
             let routes = recursionRouter(permissionList.data, dynamicRouter)
-            
             let MainContainer = DynamicRoutes.find(v => v.path === '')
             let children = MainContainer.children
             commit('SET_CONTROL_LIST', [...children, ...dynamicRouter])
             children.push(...routes)
-            console.log(children)
-
             commit('SET_MENU', children)
             let initialRoutes = router.options.routes
-            console.log(initialRoutes)
             router.addRoutes(DynamicRoutes)
-            console.log([...initialRoutes, ...DynamicRoutes])
             commit('SET_PERMISSION', [...initialRoutes, ...DynamicRoutes])
         }
     }

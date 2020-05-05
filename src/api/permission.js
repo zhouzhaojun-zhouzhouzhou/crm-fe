@@ -27,3 +27,4 @@ export function getNextLevel(id) {
 export function login(data) {
     return axios.post('/user/login', data)
 }
+

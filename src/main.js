@@ -11,6 +11,9 @@ import axios from './config/httpConfig'
 import * as globalFilter from './filters/filters'
 import '@/icons'
 
+import echarts from 'echarts'
+Vue.prototype.$echarts = echarts
+
 Vue.prototype.$http = axios
 
 for (var key in globalFilter) {
@@ -22,7 +25,6 @@ Vue.use(ElementUI)
 Vue.config.productionTip = false
 
 router.beforeEach((to, from, next) => {
-    console.log(from)
     if (!store.state.UserToken) {
         if (to.matched.length > 0 && !to.matched.some(record => record.meta.requiresAuth)) {
             next()
@@ -38,7 +40,6 @@ router.beforeEach((to, from, next) => {
             if (to.path !== '/login') {
                 next()
             } else {
-                
                 next(from.fullPath)
             }
         }

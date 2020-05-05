@@ -1,7 +1,6 @@
 export default {
     get UserToken() {
-       
-        return 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNTg4NjA2NzI5LCJleHAiOjE1ODg2OTMxMjl9.0ls91GXbQ4WzahuNp8FylKGPVoUrjiogwHBgnH8y91k'
+        return localStorage.getItem('token')
     },
     set UserToken(value) {
         localStorage.setItem('token', value)

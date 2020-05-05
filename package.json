@@ -2,7 +2,7 @@
   "name": "crm-fe",
   "version": "0.1.0",
   "private": true,
- "scripts": {
+  "scripts": {
     "serve": "vue-cli-service serve",
     "serve:randy": "cross-env API_TYPE=randy vue-cli-service serve",
     "serve:peter": "cross-env API_TYPE=peter vue-cli-service serve",
@@ -15,6 +15,7 @@
   "dependencies": {
     "axios": "^0.19.0",
     "core-js": "^2.6.5",
+    "echarts": "^4.7.0",
     "element-ui": "^2.9.2",
     "moment": "^2.24.0",
     "vue": "^2.6.10",
